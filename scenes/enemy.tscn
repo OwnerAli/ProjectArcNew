@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://b5vebrxao00uw"]
+
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_nmjdo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_raiqa"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ermkw"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ubb1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_masjy"]
+size = Vector3(1, 2.9502, 1)
+
+[node name="Enemy" type="Node3D" groups=["Enemy"]]
+script = ExtResource("1_nmjdo")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.56232, 0)
+mesh = SubResource("SphereMesh_raiqa")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.68385, 0)
+mesh = SubResource("BoxMesh_ermkw")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.17894, 0, 0, 0, 0.673736, 0, 0, 0, 0.236819, -0.064423, 0.84523, -0.315548)
+mesh = SubResource("CylinderMesh_ubb1a")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Area3D"]
+transform = Transform3D(0.17894, 0, 0, 0, 0.673736, 0, 0, 0, 0.236819, -0.064423, 0.84523, 0.325987)
+mesh = SubResource("CylinderMesh_ubb1a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.59047, 0)
+shape = SubResource("BoxShape3D_masjy")
+
+[node name="Label3D" type="Label3D" parent="Area3D"]
+transform = Transform3D(-0.0881816, 0, -0.996104, 0, 1, 0, 0.996104, 0, -0.0881816, -0.086545, 3.25365, 0.0163125)
+text = "DUMMY (HIT)
+"

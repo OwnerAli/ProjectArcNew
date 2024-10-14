@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyguypyj5tvu2"]
+
+[ext_resource type="ArrayMesh" uid="uid://cou2pai120dj7" path="res://meshes/weapons/crowbar/mesh_crowbar.res" id="1_kxg7u"]
+[ext_resource type="Script" path="res://controllers/CrowbarHitbox.gd" id="2_b23ue"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hnry7"]
+height = 2.16098
+
+[node name="Weapon" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(-0.684305, 0.72857, -0.0301923, 1.40748e-09, 0.0414049, 0.999142, 0.729196, 0.683719, -0.0283336, 0, 0, -0.332473)
+layers = 2
+mesh = ExtResource("1_kxg7u")
+
+[node name="CrowbarHitbox" type="Area3D" parent="."]
+script = ExtResource("2_b23ue")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CrowbarHitbox"]
+transform = Transform3D(0.174936, 0, 0, 0, 0.226833, 0, 0, 0, 0.0803867, -0.0149774, 0.0324044, -0.365531)
+shape = SubResource("CapsuleShape3D_hnry7")
+
+[connection signal="area_entered" from="CrowbarHitbox" to="CrowbarHitbox" method="_on_area_entered"]
