@@ -1,0 +1,11 @@
+Model Information:
+* title:	Handpainted Sword
+* source:	https://sketchfab.com/3d-models/handpainted-sword-fe9070e4db0646dd86b4c998876d8788
+* author:	beijar (https://sketchfab.com/beijar)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Handpainted Sword" (https://sketchfab.com/3d-models/handpainted-sword-fe9070e4db0646dd86b4c998876d8788) by beijar (https://sketchfab.com/beijar) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

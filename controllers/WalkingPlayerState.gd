@@ -38,7 +38,7 @@ func update(delta):
 		animation.play("sword", -1, 5)
 	
 	if Input.is_action_just_released("attack"):
-		animation.play("sword", -1, -5)
+		animation.play("sword", -1, -3, true)
 
 func _input(event):
 	if event.is_action_pressed("sprint"):

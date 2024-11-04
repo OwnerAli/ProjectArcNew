@@ -1,10 +1,5 @@
 extends Node
 
-var debug # Reference to DebubPanel node for property assignment
-var chat # Reference to ChatPanel node for property assignment
-var player # Reference to Player
-var enemy
-
 const SAVE_PATH: String = "res://savegame.bin" 
 
 func save_game() -> void:
@@ -13,7 +8,6 @@ func save_game() -> void:
 		"position.x" : GlobalScript.player.position.x,
 		"position.y" : GlobalScript.player.position.y,
 		"position.z" : GlobalScript.player.position.z,
-		"position.rotation" : GlobalScript.player._current_rotation
 	}
 	var jstr = JSON.stringify(data)
 	file.store_line(jstr)
@@ -26,7 +20,6 @@ func load_game() -> void:
 		if !file.eof_reached():
 			var current_line = JSON.parse_string(file.get_line())
 			if current_line:
-				player.position.x = int(current_line["position.x"])
-				player.position.y = int(current_line["position.y"])
-				player.position.z = int(current_line["position.z"])
-				player._current_rotation = int(current_line["position.rotation"])
+				GlobalScript.position.x = int(current_line["position.x"])
+				GlobalScript.position.y = int(current_line["position.y"])
+				GlobalScript.position.z = int(current_line["position.z"])

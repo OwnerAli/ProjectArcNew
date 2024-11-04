@@ -52,10 +52,12 @@ func update_camera(delta) -> void:
 
 	_rotation_input = 0.0
 	_tilt_input = 0.0
+	GlobalScript.save_game()
 	
 func _ready():
 	
 	GlobalScript.player = self
+	GlobalScript.load_game()
 	
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	
@@ -82,6 +84,7 @@ func update_input(speed: float, acceleration: float, deceleration: float) -> voi
 	else:
 		velocity.x = move_toward(velocity.x, 0, deceleration)
 		velocity.z = move_toward(velocity.z, 0, deceleration)
+	GlobalScript.save_game()
 	
 func update_velocity() -> void:
 	move_and_slide()

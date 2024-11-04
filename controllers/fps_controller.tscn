@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://b4gwd5h7ixvct" path="res://materials/player.tres" id="2_gldw4"]
 [ext_resource type="Script" path="res://controllers/scripts/reticle.gd" id="3_po3l3"]
 [ext_resource type="Theme" uid="uid://do0prmldw4jig" path="res://ui/themes/debug.tres" id="4_brqky"]
-[ext_resource type="PackedScene" uid="uid://cm7qyqagtbxba" path="res://meshes/weapons/crowbar/crowbar.glb" id="4_s71eh"]
+[ext_resource type="PackedScene" uid="uid://c8k57m05cbv8c" path="res://meshes/weapons/handpainted_sword/scene.gltf" id="4_uihrl"]
 [ext_resource type="Script" path="res://scripts/debug.gd" id="5_3pdut"]
 [ext_resource type="Resource" uid="uid://buc3bk15xkvgv" path="res://meshes/weapons/crowbar/crowbar_weapon.tres" id="5_a2tu4"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="6_6l8nd"]
@@ -239,26 +239,50 @@ tracks/9/keys = {
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:rotation")
+tracks/10/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.0767945, -3.98982, 5.94285)]
+"values": [Vector3(1.065, -1.19, -0.47)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:position")
+tracks/11/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(1.495, -1.31, -0.58)]
+"values": [Vector3(-0.383972, 1.01578, 0)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("CameraController/Camera3D/WeaponRig/Sword/SwordHitbox/CollisionShape3D:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.065, -1.19, -0.47)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("CameraController/Camera3D/WeaponRig/Sword/SwordHitbox/CollisionShape3D:rotation")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.383972, 1.01578, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_e0okg"]
@@ -441,35 +465,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_o2xk0"]
 resource_name = "sword"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.0767945, -3.98982, 5.94285), Vector3(0.804597, -3.26202, 5.94285)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(1.495, -1.31, -0.58), Vector3(0.44, -0.885, -1.59)]
-}
-
-[sub_resource type="Animation" id="Animation_egq1k"]
-resource_name = "sword_idle"
-length = 0.5
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -477,10 +473,10 @@ tracks/0/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
+"values": [Vector3(1.065, -1.19, -0.47), Vector3(0.875, -1.04, -0.47)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -489,11 +485,39 @@ tracks/1/path = NodePath("CameraController/Camera3D/WeaponRig/Sword:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": []
+"values": [Vector3(-0.383972, 1.01578, 0), Vector3(-0.513127, 1.52367, -0.760964)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CameraController/Camera3D/WeaponRig/Sword/SwordHitbox/CollisionShape3D:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(1.065, -1.19, -0.47)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CameraController/Camera3D/WeaponRig/Sword/SwordHitbox/CollisionShape3D:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.383972, 1.01578, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_egq1k"]
+resource_name = "sword_idle"
+length = 0.5
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_87ndl"]
 _data = {
@@ -542,14 +566,15 @@ enable_shadows = true
 [node name="WeaponRig" type="Node3D" parent="CameraController/Camera3D"]
 transform = Transform3D(1, 0, 0, 0, 0.934204, -0.356738, 0, 0.356738, 0.934204, 0, 0, 0)
 
-[node name="Sword" parent="CameraController/Camera3D/WeaponRig" instance=ExtResource("4_s71eh")]
-transform = Transform3D(-1.46832, -0.38046, 1.70895, -0.7605, 2.14759, -0.175303, -1.57699, -0.681426, -1.50664, 1.495, -1.31, -0.58)
+[node name="Sword" parent="CameraController/Camera3D/WeaponRig" instance=ExtResource("4_uihrl")]
+transform = Transform3D(0.0158087, -0.00955126, 0.0236402, 0, 0.0278155, 0.0112382, -0.0254968, -0.00592203, 0.0146575, 1.065, -1.19, -0.47)
 
 [node name="SwordHitbox" type="Area3D" parent="CameraController/Camera3D/WeaponRig/Sword"]
+transform = Transform3D(-1.46832, -0.380456, 1.70894, -0.760491, 2.14759, -0.175303, -1.57699, -0.681419, -1.50665, 1.495, -1.31, -0.58)
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CameraController/Camera3D/WeaponRig/Sword/SwordHitbox"]
-transform = Transform3D(0.999988, 8.75443e-07, -4.00469e-06, -3.19257e-06, 0.999997, 1.48714e-05, -1.99527e-05, 3.57628e-07, 0.999999, 0.302144, 0.00953597, 0.00577837)
+transform = Transform3D(3.66694, -0.220951, 2.60775, 0, 0.643461, 1.23968, -5.91417, -0.136995, 1.61687, 1.065, -1.19, -0.47)
 shape = SubResource("BoxShape3D_msu7j")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

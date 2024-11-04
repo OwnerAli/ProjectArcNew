@@ -1,10 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyguypyj5tvu2"]
 
-[ext_resource type="ArrayMesh" uid="uid://cou2pai120dj7" path="res://meshes/weapons/crowbar/mesh_crowbar.res" id="1_kxg7u"]
-[ext_resource type="Script" path="res://controllers/CrowbarHitbox.gd" id="2_b23ue"]
+[ext_resource type="ArrayMesh" uid="uid://cn7wa14cfea2h" path="res://meshes/weapons/handpainted_sword/sword_mesh.res" id="1_33l5c"]
+[ext_resource type="Script" path="res://controllers/CrowbarHitbox.gd" id="2_slb4m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hnry7"]
-height = 2.16098
+radius = 60.993
+height = 335.455
 
 [node name="Weapon" type="Node3D"]
 
@@ -12,13 +13,13 @@ height = 2.16098
 unique_name_in_owner = true
 transform = Transform3D(-0.684305, 0.72857, -0.0301923, 1.40748e-09, 0.0414049, 0.999142, 0.729196, 0.683719, -0.0283336, 0, 0, -0.332473)
 layers = 2
-mesh = ExtResource("1_kxg7u")
+mesh = ExtResource("1_33l5c")
 
 [node name="CrowbarHitbox" type="Area3D" parent="."]
-script = ExtResource("2_b23ue")
+script = ExtResource("2_slb4m")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CrowbarHitbox"]
-transform = Transform3D(0.174936, 0, 0, 0, 0.226833, 0, 0, 0, 0.0803867, -0.0149774, 0.0324044, -0.365531)
+transform = Transform3D(0.156422, 0, 0, 0, -0.159884, 0, 0, 0, 0.13746, -0.0149774, 48.5569, -0.365531)
 shape = SubResource("CapsuleShape3D_hnry7")
 
 [connection signal="area_entered" from="CrowbarHitbox" to="CrowbarHitbox" method="_on_area_entered"]

@@ -41,7 +41,7 @@ func update(delta):
 		animation.play("sword", -1, 5)
 	
 	if Input.is_action_just_released("attack"):
-		animation.play("sword", -1, -5)
+		animation.play("sword", -1, -3, true)
 
 func double_jump():
 	_double_jump = true

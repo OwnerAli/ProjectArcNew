@@ -40,7 +40,7 @@ func update(delta):
 	
 	if Input.is_action_just_released("attack"):
 		player.swordHitbox.monitoring = false
-		animation.play("sword", -1, -5)
+		animation.play("sword", -1, -3, true)
 
 func _input(event):
 	if event.is_action_released("sprint"):

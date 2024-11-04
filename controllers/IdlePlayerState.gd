@@ -28,10 +28,12 @@ func update(delta):
 		transition.emit("FallingPlayerState")
 		
 	if Input.is_action_just_pressed("attack"):
+		if !animation.animation_finished: return
 		player.swordHitbox.monitoring = true
-		animation.play("sword", -1, 5)
+		animation.play("sword", -1, true)
+		await animation.animation_finished
+		animation.play("sword", -1, -1, true)
 	
 	if Input.is_action_just_released("attack"):
 		player.swordHitbox.monitoring = false
-		animation.play("sword", -1, -5)
-	
+		#animation.play("sword", -1, -3, true)
